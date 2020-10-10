@@ -3,8 +3,8 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-central-1"
-  profile = "ca-demo"
+  region  = var.aws_region
+  profile = var.aws_profile
 }
 
 resource "aws_internet_gateway" "main" {
