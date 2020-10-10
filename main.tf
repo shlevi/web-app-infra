@@ -1,12 +1,3 @@
-terraform {
-  required_version = ">= 0.13"
-}
-
-provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile
-}
-
 resource "aws_internet_gateway" "main" {
   vpc_id = var.vpc_id
 }
@@ -18,8 +9,8 @@ resource "aws_route" "internet_access" {
 }
 
 resource "aws_subnet" "main" {
-  cidr_block = var.cidr_block
-  vpc_id = var.vpc_id
+  cidr_block              = var.cidr_block
+  vpc_id                  = var.vpc_id
   map_public_ip_on_launch = true
 }
 
